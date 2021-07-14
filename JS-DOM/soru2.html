@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body style="display: flex; ">
+    <div>
+        <h1>Karşılaştırma için 3 tane sayı giriniz</h1>
+        <input type="text" id="sayi1">
+        <input type="text" id="sayi2">
+        <input type="text" id="sayi3">
+<div>
+        <button id="enBuyukSayi" onclick="karsilastir()">En Büyük Sayiyi Bul</button>
+</div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function karsilastir(){
+
+        let sayi1= Number(document.getElementById('sayi1').value);
+        let sayi2= Number(document.getElementById('sayi2').value);
+        let sayi3= Number(document.getElementById('sayi3').value);
+
+        if(sayi1 > sayi2 && sayi1 > sayi3){
+           console.log("En büyük sayi",sayi1);
+        }
+        else if(sayi2 > sayi1 && sayi2 > sayi3){
+            console.log("En büyük sayi",sayi2);
+        }
+        else if(sayi3 > sayi1 && sayi3 > sayi2)
+        console.log("En büyük sayi",sayi3);
+
+    }
+</script>

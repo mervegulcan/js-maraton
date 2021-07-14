@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Company Name : </p> <input type="text" id="companyName">
+        <p>Contact Name : </p> <input type="text" id="contactName">
+        <p>Contact Title : </p> <input type="text" id="ContactTitle">
+    </div>
+    <div style="grid-row: auto;">
+        <br>
+        <button onclick="add()">Supplier Ekle</button>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    function add() {
+
+        let companyName_var = document.getElementById('companyName').value;
+        let contactName_var = document.getElementById('contactName').value;
+        let contactTitle_var = document.getElementById('ContactTitle').value;
+
+        let newSupplier = {
+
+            companyName: companyName_var,
+            contactName: contactName_var,
+            contactTitle: contactTitle_var
+        };
+
+        let requestOptions = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(newSupplier)
+        }
+
+
+        fetch('https://northwind.vercel.app/api/suppliers', requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <p>Eklemek istediğiniz buton sayısını giriniz : </p>
+        <input type="text" id="girilenDeger">
+        <button id="btn" onclick="btnEkle()">Buton Ekle</button>
+    </div>
+</body>
+
+</html>
+<script>
+
+
+    function btnEkle() {
+        var deger = document.getElementById("girilenDeger").value;
+
+        for (i = 0; i < deger; i++) {
+
+            var newbutton = document.createElement("button");
+            newbutton.type = "button";
+            newbutton.innerHTML = 'Button';
+            newbutton.style.color = 'black';
+            
+
+            container.appendChild(document.createElement("br"));
+            container.appendChild(newbutton);
+
+            
+
+        }
+
+
+
+
+    }
+</script>
